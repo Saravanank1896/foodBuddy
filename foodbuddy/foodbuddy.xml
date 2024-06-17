@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="foodbuddy" verbose="1">
+	<test name="foodbuddyTest">
+		<parameter name="browser" value="chrome"></parameter>
+		 <classes>
+            <class name="com.foodbuddy.testCases.LoginPageTestCase" />
+
+            <class name="com.foodbuddy.testCases.RestaurantsPageTestCase">
+                <methods>
+                    <!-- Exclude the method with priority 1, which is 'restaurants' -->
+                    <exclude name="restaurants" />
+                </methods>	
+            </class>
+
+            <class name="com.foodbuddy.testCases.ReviewersPageTestCase" />
+            <class name="com.foodbuddy.testCases.LogOutTestCase" />
+        </classes>
+    </test>
+</suite>
